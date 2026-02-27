@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --clr-main: #ffc337;
+    
+    --clr-green-active: hsl(120, 100%, 45%);
+    --clr-green-hover: hsl(120, 100%, 60%);
+    --clr-green: hsl(120, 100%, 70%);
+    --clr-green-text: hsl(120, 100%, 45%);
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 20%;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    background-image: url('../images/SubmitFormBg.png');
+    background-size: contain;
+    background-position:center;
+}
+
+/* Header */
+.header > .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(5rem, 15vw);
+    text-decoration: none;
+    color: black;
+}
+
+.header > .logo > img{
+    width: min(120px, 20vw);
+    margin-right: 3px;
+}
+
+/* Main */
+.main{
+    height: max(420px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main > form{
+    background-color: var(--clr-main);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    margin-block: 10px;
+    padding-block: 10px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.main > form > input{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.main > form > button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+
+    cursor: pointer;
+    background-color: var(--clr-green);
+}
+.main > form > *{
+    margin-block: 5px;
+    width: 80%;
+}
+
+/* Footer */
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer > *{
+    margin-block: 2px;
+}
+
+/* Misc */
+.empty{
+    flex-grow: 1;
+}
+
+/* Transitions */
+.main > form > button:hover,
+.main > form > button:active{
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+/* Hovers */
+.main > form > button:hover{
+    background-color: var(--clr-green-hover);
+}
+
+/* Active */
+.main > form > button:active{
+    background-color: var(--clr-green-active);
+}

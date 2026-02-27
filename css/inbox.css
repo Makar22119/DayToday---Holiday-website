@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --clr-main: #ffb508;
+
+    --clr-accepted: hsl(120, 90%, 67%);
+    --clr-rejected: hsl(0, 90%, 67%);
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Nav */
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--clr-main);
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+.nav > *{
+    margin-inline: 15px;
+}
+.nav > .empty{
+    flex-grow: 1;
+}
+.nav > .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(1.5rem, 3vw);
+    text-decoration: none;
+    color: black;
+    padding-block: 8.7px;
+}
+.nav > .logo > img{
+    width: min(40px, 5vw);
+    margin-right: 3px;
+}
+
+/* Main */
+.main{
+    padding-block: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main > ul > .response{
+    text-align: center;
+    margin-block: 10px;
+    padding-inline: 5px;
+    padding-block: 3px;
+
+    width: 80vw;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer{
+    background-color: black;
+    color: white;
+    padding-block: 10px;
+    text-align: center;
+}
+
+/* Misc */
+.accepted{
+    background-color: var(--clr-accepted);
+}
+.rejected{
+    background-color: var(--clr-rejected);
+}

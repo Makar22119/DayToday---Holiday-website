@@ -13,26 +13,15 @@ session_set_cookie_params([
 
 session_start();
 
-if (isset($_SESSION['user_id'])){
-    if (!isset($_SESSION['last_regeneration'])) {
-        regenerateSessionLogged();
-    } else{
-        $interval = 60 * 30;
+if (!isset($_SESSION['last_regeneration'])) {
+    if (isset($_SESSION['user_id'])) regenerateSessionLogged();
+    else regenerateSession();
+} else{
+    $interval = 60 * 30;
 
-        if (time() - $_SESSION['last_regeneration'] >=$interval){
-            regenerateSessionLogged();
-        }
-    }
-} else {
-    // regenerating session every 30 minutes in order to keep it secure
-    if (!isset($_SESSION['last_regeneration'])) {
-        regenerateSession();
-    } else{
-        $interval = 60 * 30;
-
-        if (time() - $_SESSION['last_regeneration'] >=$interval){
-            regenerateSession();
-        }
+    if (time() - $_SESSION['last_regeneration'] >=$interval){
+        if (isset($_SESSION['user_id'])) regenerateSessionLogged();
+        else regenerateSession();
     }
 }
 

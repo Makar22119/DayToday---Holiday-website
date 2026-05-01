@@ -1,5 +1,4 @@
 const menuBut = document.querySelector('.js-nav-menu-but');
-const darkModeBut = document.querySelector('.js-dark-mode-but');
 const logoutBut = document.querySelector('.js-logout-but');
 
 menuBut.addEventListener("click", () => {
